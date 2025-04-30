@@ -30,7 +30,8 @@ public class PhysicalProduct extends Product implements Categorizable{
 
     @Override
     public double calculateValue(){
-        return price * quantity;
+        double value = this.price * this.quantity;
+        return value;
     }
     @Override
     public Category getCategory() {

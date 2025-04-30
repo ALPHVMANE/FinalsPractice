@@ -65,6 +65,9 @@
 <div class="container">
   <h1>Product Details</h1>
   <div class="product-type">${product['class'].simpleName}</div>
+<c:if test="${product['class'].simpleName eq 'DigitalProduct'}">
+  <p>FILES: ${product.fileSize}</p>
+</c:if>
 
   <div class="product-details">
     <!-- Common Product Properties -->
@@ -90,9 +93,10 @@
 
     <!-- PhysicalProduct Specific Properties -->
     <c:if test="${product['class'].simpleName eq 'PhysicalProduct'}">
+
       <div class="detail-row">
         <div class="detail-label">Weight:</div>
-        <div class="detail-value">${product.weight} kg</div>
+        <div class="detail-value">${product.weight} </div>
       </div>
 
       <div class="detail-row">
@@ -116,12 +120,12 @@
   </div>
 
   <div class="calculated-value">
-    <strong>Calculated Value: $${product.calculateValue()}</strong>
+    <strong>Calculated Value: ${product.calculateValue()}</strong>
     <c:if test="${product['class'].simpleName eq 'PhysicalProduct'}">
-      <p>Calculation: $${product.price} × ${product.quantity} = $${product.calculateValue()}</p>
+      <p>Calculation: $${product.price} × ${product.quantity} = ${product.calculateValue()}</p>
     </c:if>
     <c:if test="${product['class'].simpleName eq 'DigitalProduct'}">
-      <p>Calculation: $${product.price} × (1 + ${product.downloadCount} × 0.01) = $${product.calculateValue()}</p>
+      <p>Calculation: $${product.price} × (1 + ${product.downloadCount} × 0.01) = ${product.calculateValue()}</p>
     </c:if>
   </div>
 

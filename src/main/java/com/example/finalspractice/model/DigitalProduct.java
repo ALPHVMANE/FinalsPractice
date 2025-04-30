@@ -30,7 +30,7 @@ public class DigitalProduct extends Product implements Categorizable {
 
     @Override
     public double calculateValue(){
-        return price * (1 + downloadCount * 0.01);
+        return this.price * (1 + this.downloadCount * 0.01);
     }
 
     @Override
