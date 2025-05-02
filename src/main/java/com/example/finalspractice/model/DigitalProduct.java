@@ -1,9 +1,6 @@
 package com.example.finalspractice.model;
 
 public class DigitalProduct extends Product implements Categorizable {
-    private long id;
-    private String name;
-    private double price;
     private String fileSize;
     private int downloadCount;
     private Category category;
@@ -24,6 +21,7 @@ public class DigitalProduct extends Product implements Categorizable {
         return downloadCount;
     }
 
+
     public void setDownloadCount(int downloadCount) {
         this.downloadCount = downloadCount;
     }
@@ -43,6 +41,6 @@ public class DigitalProduct extends Product implements Categorizable {
     }
     @Override
     public String toString() {
-        return "Digi Product " + this.getName() + " " + this.getCategory() + " " + this.getPrice();
+        return "Digi Product " + this.getName() + " " + this.getCategory() + " " + this.getPrice() + " | " + calculateValue() + " | "+ this.getFileSize() + " | Count" + this.getDownloadCount();
     }
 }

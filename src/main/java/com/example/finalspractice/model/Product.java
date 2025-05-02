@@ -1,9 +1,9 @@
 package com.example.finalspractice.model;
 
 public abstract class Product implements Categorizable{
-    private long id;
-    private String name;
-    private double price;
+    protected long id;
+    protected String name;
+    protected double price;
     private Category category;
 
     public Product(long id, String name, double price) {

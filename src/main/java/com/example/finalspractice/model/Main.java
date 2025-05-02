@@ -6,18 +6,23 @@ public class Main {
 
         InventoryManager im = new InventoryManager();
         System.out.println("Inventory manager");
-        PhysicalProduct p1 = new PhysicalProduct(1, "Rubber Ducky", 2.00);
+        Product p1 = new PhysicalProduct(1, "Rubber Ducky", 2.00);
+        ((PhysicalProduct) p1).setWeight(3333);
+        ((PhysicalProduct) p1).setQuantity(23);
+            Product p2 = new DigitalProduct(2, "World of Warcraft", 49.00);
+            ((DigitalProduct) p2).setFileSize("22");
+            ((DigitalProduct) p2).setDownloadCount(23);
 
-        DigitalProduct p2 = new DigitalProduct(2, "World of Warcraft", 49.00);
+            im.addProduct(p1);
+            im.addProduct(p2);
 
-        im.addProduct(p1);
-        im.addProduct(p2);
+            // Side effects so that the developer can observe it worked
 
-        // Side effects so that the developer can observe it worked
+            // Loop through the products and print them out
+            for (Product p : im.getProducts()) {
+                System.out.println(p.toString());
+            }
 
-        // Loop through the products and print them out
-        for (Product p : im.getProducts()) {
-            System.out.println(p.toString());
-        }
     }
 }
+

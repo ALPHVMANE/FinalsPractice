@@ -1,9 +1,6 @@
 package com.example.finalspractice.model;
 
 public class PhysicalProduct extends Product implements Categorizable{
-    private long id;
-    private String name;
-    private double price;
     private double weight;
     private int quantity;
     private Category category;
@@ -19,19 +16,15 @@ public class PhysicalProduct extends Product implements Categorizable{
     public void setWeight(double weight) {
         this.weight = weight;
     }
-
     public int getQuantity() {
         return quantity;
     }
-
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
     @Override
     public double calculateValue(){
-        double value = this.price * this.quantity;
-        return value;
+        return this.price * this.quantity;
     }
     @Override
     public Category getCategory() {
@@ -43,6 +36,7 @@ public class PhysicalProduct extends Product implements Categorizable{
     }
     @Override
     public String toString() {
-        return "Phys Product " + this.getName() + " " + this.getCategory() + " " + this.getPrice();
+        return "Phys Product " + this.getName() + " " + this.getCategory() + " " + this.getPrice() + " | " + calculateValue() + " | Qty:" + this.getQuantity();
     }
+
 }

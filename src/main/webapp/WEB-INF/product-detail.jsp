@@ -120,12 +120,12 @@
   </div>
 
   <div class="calculated-value">
-    <strong>Calculated Value: ${product.calculateValue()}</strong>
+    <strong>Calculated Value: $${product.calculateValue()}</strong>
     <c:if test="${product['class'].simpleName eq 'PhysicalProduct'}">
-      <p>Calculation: $${product.price} × ${product.quantity} = ${product.calculateValue()}</p>
+      <p>Calculation: $${product.price} × ${product.quantity} = $${product.calculateValue()}</p>
     </c:if>
     <c:if test="${product['class'].simpleName eq 'DigitalProduct'}">
-      <p>Calculation: $${product.price} × (1 + ${product.downloadCount} × 0.01) = ${product.calculateValue()}</p>
+      <p>Calculation: $${product.price} × (1 + ${product.downloadCount} × 0.01) = $${product.calculateValue()}</p>
     </c:if>
   </div>
 
